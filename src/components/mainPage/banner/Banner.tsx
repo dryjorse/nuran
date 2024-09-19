@@ -1,8 +1,18 @@
 import { FC } from "react";
 import bannerImage from "../../../assets/images/banner.jpg";
 import arrowIcon from "../../../assets/images/icons/arrow-right.svg";
+import { scroller } from "react-scroll";
 
 const Banner: FC = () => {
+  const onClickOrder = () => {
+    scroller.scrollTo("order", {
+      duration: 800,
+      delay: 100,
+      smooth: true,
+      offset: -150,
+    });
+  };
+
   return (
     <section
       style={{ backgroundImage: `url(${bannerImage})` }}
@@ -15,7 +25,10 @@ const Banner: FC = () => {
         <p className="max-w-[364px] text-[20px] leading-[24px]">
           Живите с комфортом, безопасностью и престижем
         </p>
-        <button className="btn mt-[32px] py-[8px] flex gap-[15px] items-center">
+        <button
+          onClick={onClickOrder}
+          className="btn mt-[32px] py-[8px] flex gap-[15px] items-center"
+        >
           <span>Оставить заявку</span>
           <img src={arrowIcon} alt="arrow" />
         </button>

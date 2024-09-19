@@ -1,18 +1,19 @@
 import { FC, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Dropdown from "../ui/dropdown/Dropdown";
 import { useTranslation } from "react-i18next";
 import logoIcon from "../../assets/images/icons/logo.svg";
 import arrowIcon from "../../assets/images/icons/arrow-down.svg";
 import checkMarkIcon from "../../assets/images/icons/check-mark.svg";
 import { LanguageType } from "../../types/client.types";
+import { scroller } from "react-scroll";
 
 const navList = [
   { title: "header.about" },
   { title: "header.advantages" },
   { title: "header.plans" },
   { title: "header.gallery" },
-  { title: "header.bid" },
+  { title: "header.order" },
   { title: "header.stages" },
   { title: "header.contacts" },
 ];
@@ -28,10 +29,25 @@ const formattedLanguage = {
 const Header: FC = () => {
   const { t, i18n } = useTranslation();
   const languageController = useState(false);
+  const navigate = useNavigate();
 
   const onChangeLanguage = (language: LanguageType) => {
     i18n.changeLanguage(language);
     languageController[1](false);
+  };
+
+  const scrollFunc = async (link: string) => {
+    if (location.pathname !== "/") {
+      await navigate("/");
+      scroller.scrollTo(link, { offset: -200 });
+    } else {
+      scroller.scrollTo(link, {
+        duration: 800,
+        delay: 100,
+        smooth: true,
+        offset: -150,
+      });
+    }
   };
 
   return (
@@ -44,12 +60,19 @@ const Header: FC = () => {
         <nav className="flex gap-[20px] items-center">
           <ul className="flex gap-[32px] items-center">
             {navList.map(({ title }) => (
-              <li key={title} className="cursor-pointer text-14 text-clickable">
+              <li
+                key={title}
+                onClick={() => scrollFunc(title.split(".")[1])}
+                className="cursor-pointer text-14 text-clickable"
+              >
                 {t(title)}
               </li>
             ))}
           </ul>
-          <Link to="/360" className="btn font-bold text-text-primary-lightmode hover:brightness-75 active:brightness-50">
+          <Link
+            to="/360"
+            className="btn font-bold text-text-primary-lightmode hover:brightness-75 active:brightness-50"
+          >
             360°
           </Link>
         </nav>

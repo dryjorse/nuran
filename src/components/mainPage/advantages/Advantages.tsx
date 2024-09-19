@@ -4,6 +4,7 @@ import safetyIcon from "../../../assets/images/icons/safety.svg";
 import technoIcon from "../../../assets/images/icons/techno.svg";
 import styleIcon from "../../../assets/images/icons/style.svg";
 import treeIcon from "../../../assets/images/icons/tree.svg";
+import { Element } from "react-scroll";
 
 const advantages = [
   { icon: geoIcon, title: "Расположение на Южной магистрали" },
@@ -16,19 +17,25 @@ const advantages = [
 const Advantages: FC = () => {
   return (
     <section className="container pt-[57px] pb-[48px]">
-      <h2>5 причин выбрать Нуран Парк</h2>
-      <div className="mt-[16px] flex justify-between items-center">
-        {advantages.map(({ icon, title }, key) => (
-          <div key={key} className="flex-[0_1_180px] text-center">
-            <div className="h-[132px] flex justify-center items-center">
-              <img src={icon} alt={`advantage-${title}`} className="mx-auto" />
+      <Element name="advantages">
+        <h2>5 причин выбрать Нуран Парк</h2>
+        <div className="mt-[16px] flex justify-between items-center">
+          {advantages.map(({ icon, title }, key) => (
+            <div key={key} className="flex-[0_1_180px] text-center">
+              <div className="h-[132px] flex justify-center items-center">
+                <img
+                  src={icon}
+                  alt={`advantage-${title}`}
+                  className="mx-auto"
+                />
+              </div>
+              <span className="mt-[24px] block text-[14px] leading-[18px] font-medium">
+                {title}
+              </span>
             </div>
-            <span className="mt-[24px] block text-[14px] leading-[18px] font-medium">
-              {title}
-            </span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </Element>
     </section>
   );
 };
