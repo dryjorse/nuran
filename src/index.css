@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "GothamPro";
+    src: url("./assets/fonts/gothampro/gothampro.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GothamPro";
+    src: url("./assets/fonts/gothampro/gothampro_medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "GothamPro";
+    src: url("./assets/fonts/gothampro/gothampro_bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  * {
+    @apply m-0 p-0 box-border;
+  }
+  body {
+    @apply font-gotham-pro text-16 bg-[#F5F5F5];
+  }
+  h2 {
+    @apply text-[28px] leading-[28px] font-bold text-text-primary-lightmode;
+  }
+  h3 {
+    @apply text-text-secondary-neutral leading-[20px] font-normal;
+  }
+  p {
+    @apply text-[13px] leading-[17px];
+  }
+  input {
+    @apply outline-none animate-def;
+  }
+  .animate-def {
+    @apply duration-75 transition-all ease-in;
+  }
+  .text-clickable {
+    @apply animate-def hover:text-text-secondary-darkmode active:text-text-secondary-neutral;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-button-secondary-darkmode rounded-[8px];
+  }
+  ::-webkit-scrollbar {
+    @apply w-[10px];
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1140px] mx-auto;
+  }
+  .btn {
+    @apply rounded-lvl-4 py-[4px] px-[16px] text-[13px] text-text-primary-darkmode font-bold leading-[17px] bg-button-secondary-darkmode animate-def hover:bg-button-secondary-neutral active:bg-button-secondary-lightmode disabled:bg-icon-neutral disabled:pointer-events-none;
+  }
+  .btn-outline {
+    @apply border-2 border-text-secondary-neutral rounded-lvl-8 py-[4px] px-[12px] text-[14px] font-medium leading-[18px] text-text-secondary-neutral;
+  }
+  .plan-swiper-pagination .swiper-pagination-bullet,
+  .gallery-swiper-pagination .swiper-pagination-bullet {
+    @apply !m-0 rounded-lvl-1000 bg-icon-neutral block animate-def cursor-pointer opacity-100;
+  }
+  .plan-swiper-pagination .swiper-pagination-bullet-active,
+  .gallery-swiper-pagination .swiper-pagination-bullet-active {
+    @apply rounded-lvl-8 bg-button-secondary-darkmode w-[32px];
+  }
+}

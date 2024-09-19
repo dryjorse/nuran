@@ -1,0 +1,88 @@
+/** @type {import('tailwindcss').Config} */
+const twColors = require("tailwindcss/colors");
+
+const colors = {
+  white: twColors.white,
+  transparent: twColors.transparent,
+  red: "rgb(255,40,40)",
+  "text-primary-lightmode": "rgba(20, 20, 20, 1)",
+  "text-primary-darkmode": "rgba(255, 255, 255, 1)",
+  "text-neutral": "rgba(210, 210, 210, 1)",
+  "text-secondary-darkmode": "rgba(224, 121, 70, 1)",
+  "text-secondary-neutral": "rgba(177, 87, 23, 1)",
+  "text-secondary-lightmode": "rgba(90, 39, 2, 1)",
+  "button-primary-lightmode": "rgba(20, 20, 20, 1)",
+  "button-primary-darkmode": "rgba(255, 255, 255, 1)",
+  "button-secondary-darkmode": "rgba(224, 121, 70, 1)",
+  "button-secondary-lightmode": "rgba(90, 39, 2, 1)",
+  "button-secondary-neutral": "rgba(177, 87, 23, 1)",
+  "divider-neutral": "rgba(210, 210, 210, 1)",
+  "stroke-neutral": "rgba(210, 210, 210, 1)",
+  "icon-neutral": "rgba(210, 210, 210, 1)",
+  "primary-background": "rgba(245, 245, 245, 1)",
+  "secondary-background": "rgba(255, 255, 255, 1)",
+  "neutral-background": "rgba(31, 31, 31, 1)",
+  "neutral-secondary-background": "rgba(38, 38, 38, 1)",
+  "divider-secondary-darkmode": "rgba(224, 121, 70, 1)",
+};
+
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    colors,
+    extend: {
+      borderRadius: {
+        "lvl-4": "4px",
+        "lvl-8": "8px",
+        "lvl-12": "12px",
+        "lvl-16": "16px",
+        "lvl-24": "24px",
+        "lvl-1000": "50%",
+      },
+      padding: {
+        10: "10px",
+        20: "20px",
+        30: "30px",
+        40: "40px",
+        50: "50px",
+        60: "60px",
+        70: "70px",
+        80: "80px",
+        90: "90px",
+        100: "100px",
+      },
+      margin: {
+        10: "10px",
+        20: "20px",
+        30: "30px",
+        40: "40px",
+        50: "50px",
+        60: "60px",
+        70: "70px",
+        80: "80px",
+        90: "90px",
+      },
+      fontSize: {
+        14: "14px",
+        16: "16px",
+        18: "18px",
+        24: "24px",
+      },
+      fontFamily: {
+        "gotham-pro": "GothamPro",
+        "golos-text": "Golos Text",
+      },
+      screens: {
+        ublt: { max: "1440px" },
+        blt: { max: "1200px" },
+        lt: { max: "1024px" },
+        tb: { max: "768px" },
+        stb: { max: "540px" },
+        bmb: { max: "425px" },
+        amb: { max: "375px" },
+        smb: { max: "340px" },
+      },
+    },
+  },
+  plugins: [],
+};
