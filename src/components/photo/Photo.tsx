@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Photo: FC<Props> = ({ image, description }) => {
-  const [photoModal, setPhotoModal] = useAtom(photoModalAtom);
+  const [_, setPhotoModal] = useAtom(photoModalAtom);
 
   return (
     <div className="group relative rounded-lvl-12 p-[16px] flex justify-between items-end gap-[26px] w-[267px] h-[185px] bg-no-repeat bg-cover bg-center cursor-pointer overflow-hidden hover:before:opacity-100 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:z-10 before:[background:_linear-gradient(180deg,rgba(47,47,47,0)_0%,#2F2F2F_100%)] before:opacity-0 before:animate-def before:duration-[.250s]">
