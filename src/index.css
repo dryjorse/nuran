@@ -28,7 +28,8 @@
     @apply m-0 p-0 box-border;
   }
   body {
-    @apply font-gotham-pro text-16 bg-[#F5F5F5];
+    font-family: "GothamPro", sans-serif;
+    @apply text-16 bg-[#F5F5F5];
   }
   h2 {
     @apply text-[28px] leading-[28px] font-bold text-text-primary-lightmode;

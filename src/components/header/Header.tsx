@@ -1,12 +1,13 @@
 import { FC, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Dropdown from "../ui/dropdown/Dropdown";
 import { useTranslation } from "react-i18next";
 import logoIcon from "../../assets/images/icons/logo.svg";
 import arrowIcon from "../../assets/images/icons/arrow-down.svg";
 import checkMarkIcon from "../../assets/images/icons/check-mark.svg";
 import { LanguageType } from "../../types/client.types";
-import { scroller } from "react-scroll";
+import { scroller, Link as ScrollLink } from "react-scroll";
+import clsx from "clsx";
 
 const navList = [
   { title: "header.about" },
@@ -30,6 +31,7 @@ const Header: FC = () => {
   const { t, i18n } = useTranslation();
   const languageController = useState(false);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const onChangeLanguage = (language: LanguageType) => {
     i18n.changeLanguage(language);
@@ -37,16 +39,9 @@ const Header: FC = () => {
   };
 
   const scrollFunc = async (link: string) => {
-    if (location.pathname !== "/") {
+    if (pathname !== "/") {
       await navigate("/");
-      scroller.scrollTo(link, { offset: -200 });
-    } else {
-      scroller.scrollTo(link, {
-        duration: 800,
-        delay: 100,
-        smooth: true,
-        offset: -150,
-      });
+      scroller.scrollTo(link, { offset: -150 });
     }
   };
 
@@ -60,12 +55,21 @@ const Header: FC = () => {
         <nav className="flex gap-[20px] items-center">
           <ul className="flex gap-[32px] items-center">
             {navList.map(({ title }) => (
-              <li
-                key={title}
-                onClick={() => scrollFunc(title.split(".")[1])}
-                className="cursor-pointer text-14 text-clickable"
-              >
-                {t(title)}
+              <li key={title}>
+                <ScrollLink
+                  spy
+                  smooth
+                  duration={500}
+                  to={title.split(".")[1]}
+                  onClick={() => scrollFunc(title.split(".")[1])}
+                  offset={title.split(".")[1] === "contacts" ? -390 : -150}
+                  className={clsx("cursor-pointer text-14 text-clickable ", {
+                    "[&.active]:!text-text-secondary-darkmode":
+                      pathname === "/",
+                  })}
+                >
+                  {t(title)}
+                </ScrollLink>
               </li>
             ))}
           </ul>

@@ -7,5 +7,79 @@
     "order": "Заявка",
     "stages": "Этапы работы",
     "contacts": "Контакты"
+  },
+  "banner": {
+    "welcome": "Добро пожаловать в Nuran Park",
+    "subtitle": "Живите с комфортом, безопасностью и престижем"
+  },
+  "leaveRequest": "Оставить заявку",
+  "about": {
+    "title": "О компании",
+    "subtitle": "Наша история и ценности",
+    "description": "Nuran Строй — это компания с 37-летним опытом в строительстве, зарекомендовавшая себя как надежный и ответственный застройщик в Кыргызстане. Мы обладаем лицензией 1-го уровня ответственности, что позволяет нам реализовывать проекты любой сложности с высоким стандартом качества. Каждое наше здание — это результат многолетнего опыта, новейших технологий и глубокого уважения к нашим клиентам.",
+    "project": "О проекте",
+    "projectSubtitle": "Уникальные возможности для жизни и инвестиций",
+    "projectDescription": "Nuran Park — это не просто жилье, это умная инвестиция в будущее. Высокое качество строительства, престижное расположение и уникальные условия делают квартиры в нашем комплексе востребованными на рынке недвижимости. Ваше решение инвестировать в Nuran Park — это выбор надежности, комфорта и стабильности."
+  },
+  "advantages": {
+    "title": "5 причин выбрать Нуран Парк",
+    "geo": "Расположение на Южной магистрали",
+    "safety": "Высокий уровень безопасности",
+    "techno": "Современные технологии и комфорт",
+    "style": "Элегантность и стиль в каждой детали",
+    "life": "Жизнь в окружении земли"
+  },
+  "plans": {
+    "title": "Планы типового этажа",
+    "subtitle": "Нажмите на стрелочки чтобы увидеть больше",
+    "term": {
+      "title": "3-х комнатная квартира",
+      "block": "БЛОК-A",
+      "hallway": "Прихожая",
+      "bathroom": "Сан узел",
+      "bedroom": "Спальня",
+      "hall": "Зал",
+      "balcony": "Балкон"
+    }
+  },
+  "geolocation": {
+    "title": "Расположение ЖК Nuran Park",
+    "subtitle": "Южная магистраль"
+  },
+  "gallery": {
+    "title": "Галерея",
+    "subtitle": "Чтобы просмотреть больше фотографий нажмите “Ещё”"
+  },
+  "more": "Ещё",
+  "order": {
+    "title": "Заказать звонок",
+    "subtitle": "Хотите узнать больше? Закажите звонок, и мы свяжемся с вами!",
+    "name": "Как вас зовут?",
+    "placeholderName": "Введиет свое полное имя",
+    "phone": "Ваш номер телефона",
+    "placeholderPhone": "Введите свой номер телефона",
+    "submit": "Отправить заявку",
+    "whatsapp": "Перейти на WhatsApp",
+    "contactWhen": "Сотрудники колл-центра свяжутся с вами как только освободятся."
+  },
+  "stages": {
+    "title": "Этапы стройки",
+    "subtitle": "Проектируем, строим, проверяем, завершаем и поддерживаем.",
+    "request": "Заявка",
+    "requestDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "meeting": "Встреча",
+    "meetingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "contract": "Договор",
+    "contractDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "payment": "Оплата",
+    "paymentDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "completion": "Завершение объекта",
+    "completionDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "handing": "Вручение ключей",
+    "handingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique."
+  },
+  "footer": {
+    "schedule": "График работы 9:00 - 18:00",
+    "address": "Малдыбаева 265 адресс"
   }
 }

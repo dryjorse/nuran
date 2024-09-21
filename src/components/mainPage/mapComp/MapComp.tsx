@@ -1,11 +1,14 @@
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 const MapComp: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="container py-[48px]">
-      <h2>Расположение ЖК Nuran Park</h2>
-      <h3 className="mt-[8px] mb-[16px]">Южная магистраль</h3>
+      <h2>{t("geolocation.title")}</h2>
+      <h3 className="mt-[8px] mb-[16px]">{t("geolocation.subtitle")}</h3>
       <YMaps>
         <Map
           width="100%"

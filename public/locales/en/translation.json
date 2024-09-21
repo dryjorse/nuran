@@ -4,8 +4,82 @@
     "advantages": "Advantages",
     "plans": "Typical floor plans",
     "gallery": "Gallery",
-    "order": "Bid",
+    "order": "Request",
     "stages": "Stages of work",
     "contacts": "Contacts"
+  },
+  "banner": {
+    "welcome": "Welcome to Nuran Park",
+    "subtitle": "Live with comfort, safety and prestige"
+  },
+  "leaveRequest": "Leave a request",
+  "about": {
+    "title": "About the company",
+    "subtitle": "Our history and values",
+    "description": "Nuran Stroy is a company with 37 years of experience in construction, which has established itself as a reliable and responsible developer in Kyrgyzstan. We have a 1st level of responsibility license, which allows us to implement projects of any complexity with a high quality standard. Each of our buildings is the result of many years of experience, the latest technology and deep respect for our clients.",
+    "project": "About the project",
+    "projectSubtitle": "Unique opportunities for life and investment",
+    "projectDescription": "Nuran Park is not just housing, it is a smart investment in the future. High quality construction, prestigious location and unique conditions make apartments in our complex in demand on the real estate market. Your decision to invest in Nuran Park is a choice of reliability, comfort and stability."
+  },
+  "advantages": {
+    "title": "5 reasons to choose Nuran Park",
+    "geo": "Location on the Southern Highway",
+    "safety": "High level of security",
+    "techno": "Modern technologies and comfort",
+    "style": "Elegance and style in every detail",
+    "life": "Life surrounded by earth"
+  },
+  "plans": {
+    "title": "Typical floor plans",
+    "subtitle": "Click on the arrows to see more",
+    "term": {
+      "title": "3-room apartment",
+      "block": "BLOCK-A",
+      "hallway": "hallway",
+      "bathroom": "bathroom",
+      "bedroom": "bedroom",
+      "hall": "hall",
+      "balcony": "balcony"
+    }
+  },
+  "geolocation": {
+    "title": "Location of Nuran Park residential complex",
+    "subtitle": "Southern Highway"
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "To view more photos, click “More”"
+  },
+  "more": "More",
+  "order": {
+    "title": "Request a call",
+    "subtitle": "Want to know more? Request a call and we will contact you!",
+    "name": "What is your name?",
+    "placeholderName": "Enter your full name",
+    "phone": "Your phone number",
+    "placeholderPhone": "Enter your phone number",
+    "submit": "Submit request",
+    "whatsapp": "Go to WhatsApp",
+    "contactWhen": "Call center staff will contact you as soon as they are available."
+  },
+  "stages": {
+    "title": "Construction stages",
+    "subtitle": "We design, build, test, complete and support.",
+    "request": "Request",
+    "requestDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "meeting": "Meeting",
+    "meetingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "contract": "Contract",
+    "contractDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "payment": "Payment",
+    "paymentDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "completion": "Completion of the object",
+    "completionDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
+    "handing": "Handing over the keys",
+    "handingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique."
+  },
+  "footer": {
+    "schedule": "Opening hours 9:00 - 18:00",
+    "address": "Maldybaeva 265 address"
   }
 }

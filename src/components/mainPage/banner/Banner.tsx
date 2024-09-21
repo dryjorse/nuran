@@ -2,8 +2,11 @@ import { FC } from "react";
 import bannerImage from "../../../assets/images/banner.jpg";
 import arrowIcon from "../../../assets/images/icons/arrow-right.svg";
 import { scroller } from "react-scroll";
+import { useTranslation } from "react-i18next";
 
 const Banner: FC = () => {
+  const { t } = useTranslation();
+
   const onClickOrder = () => {
     scroller.scrollTo("order", {
       duration: 800,
@@ -20,16 +23,16 @@ const Banner: FC = () => {
     >
       <div className="container pt-[11%] text-text-primary-darkmode">
         <h1 className="mb-[8px] max-w-[336px]  text-[32px] font-bold leading-[32px]">
-          Добро пожаловать в Nuran Park
+          {t("banner.welcome")}
         </h1>
         <p className="max-w-[364px] text-[20px] leading-[24px]">
-          Живите с комфортом, безопасностью и престижем
+          {t("banner.subtitle")}
         </p>
         <button
           onClick={onClickOrder}
           className="btn mt-[32px] py-[8px] flex gap-[15px] items-center"
         >
-          <span>Оставить заявку</span>
+          <span>{t("leaveRequest")}</span>
           <img src={arrowIcon} alt="arrow" />
         </button>
       </div>
