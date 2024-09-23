@@ -1,5 +1,4 @@
 import { FC, useEffect } from "react";
-
 import ReactPlayer from "react-player";
 import { aboutData } from "../../../constants/data";
 import Photo from "../../photo/Photo";
@@ -36,7 +35,7 @@ const About: FC = () => {
           <ReactPlayer
             width="100%"
             height={641}
-            url="https://www.youtube.com/watch?v=JQdYU_5fT7g"
+            url="https://www.youtube.com/watch?v=zoKJRdb-7x8"
             loading="lazy"
             controls
             className="rounded-[10px] overflow-hidden"
