@@ -31,16 +31,9 @@
   },
   "plans": {
     "title": "Typical floor plans",
-    "subtitle": "Click on the arrows to see more",
-    "term": {
-      "title": "3-room apartment",
-      "block": "BLOCK-A",
-      "hallway": "hallway",
-      "bathroom": "bathroom",
-      "bedroom": "bedroom",
-      "hall": "hall",
-      "balcony": "balcony"
-    }
+    "subtitle": "Click the switch to see more",
+    "blockA": "Block-A",
+    "blockB": "Block-B"
   },
   "geolocation": {
     "title": "Location of Nuran Park residential complex",
@@ -65,18 +58,7 @@
   "stages": {
     "title": "Construction stages",
     "subtitle": "We design, build, test, complete and support.",
-    "request": "Request",
-    "requestDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "meeting": "Meeting",
-    "meetingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "contract": "Contract",
-    "contractDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "payment": "Payment",
-    "paymentDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "completion": "Completion of the object",
-    "completionDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "handing": "Handing over the keys",
-    "handingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique."
+    "report": "Construction report"
   },
   "footer": {
     "schedule": "Opening hours 9:00 - 18:00",

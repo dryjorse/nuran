@@ -31,16 +31,9 @@
   },
   "plans": {
     "title": "Типтүү этаждын пландары",
-    "subtitle": "Көбүрөөк көрүү үчүн жебелерди басыңыз",
-    "term": {
-      "title": "3 бөлмөлүк батир",
-      "block": "БЛОК-A",
-      "hallway": "Кире-бериш",
-      "bathroom": "Сан узел",
-      "bedroom": "Уктоо бөлмөсү",
-      "hall": "Зал",
-      "balcony": "Балкон"
-    }
+    "subtitle": "Көбүрөөк көрүү үчүн которгучту басыңыз",
+    "blockA": "Блок-А",
+    "blockB": "Блок-Б"
   },
   "geolocation": {
     "title": "Нуран Парк турак жай комплексинин жайгашкан жери",
@@ -65,18 +58,7 @@
   "stages": {
     "title": "Курулуштун этаптары",
     "subtitle": "Проекттейбиз, курабыз, текшеребиз, бүтүрөбүз жана колдоп турабыз.",
-    "request": "Арыз",
-    "requestDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "meeting": "Жолугушуу",
-    "meetingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "contract": "Макулдашуу",
-    "contractDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "payment": "Төлөм",
-    "paymentDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "completion": "Объекттин бүтүшү",
-    "completionDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "handing": "Ачкыччты тапшыруу",
-    "handingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique."
+    "report": "Курулуш отчету"
   },
   "footer": {
     "schedule": "Жумуш убактысы 9:00 - 18:00",

@@ -31,16 +31,9 @@
   },
   "plans": {
     "title": "Планы типового этажа",
-    "subtitle": "Нажмите на стрелочки чтобы увидеть больше",
-    "term": {
-      "title": "3-х комнатная квартира",
-      "block": "БЛОК-A",
-      "hallway": "Прихожая",
-      "bathroom": "Сан узел",
-      "bedroom": "Спальня",
-      "hall": "Зал",
-      "balcony": "Балкон"
-    }
+    "subtitle": "Нажмите на переключатель чтобы увидеть больше",
+    "blockA": "Блок-А",
+    "blockB": "Блок-Б"
   },
   "geolocation": {
     "title": "Расположение ЖК Nuran Park",
@@ -63,20 +56,9 @@
     "contactWhen": "Сотрудники колл-центра свяжутся с вами как только освободятся."
   },
   "stages": {
-    "title": "Этапы стройки",
+    "title": "Этапы строительства",
     "subtitle": "Проектируем, строим, проверяем, завершаем и поддерживаем.",
-    "request": "Заявка",
-    "requestDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "meeting": "Встреча",
-    "meetingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "contract": "Договор",
-    "contractDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "payment": "Оплата",
-    "paymentDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "completion": "Завершение объекта",
-    "completionDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique.",
-    "handing": "Вручение ключей",
-    "handingDescr": "Lorem ipsum dolor sit amet consectetur. A ut arcu urna ac ut consectetur tristique."
+    "report": "Отчет по строительству"
   },
   "footer": {
     "schedule": "График работы 9:00 - 18:00",

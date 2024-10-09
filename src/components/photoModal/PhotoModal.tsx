@@ -8,6 +8,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import arrowIcon from "../../assets/images/icons/arrow-slider.svg";
 import maginfierPlusIcon from "../../assets/images/icons/magnifier-plus.svg";
 import maginfierMinusIcon from "../../assets/images/icons/magnifier-minus.svg";
+import crossIcon from "../../assets/images/icons/cross.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -35,6 +36,7 @@ const PhotoModal: FC = () => {
   }, [image]);
 
   const handleSlideChange = (swiper: SwiperClass) => {
+    setPhotoModal({ isOpen, image: images[swiper.activeIndex]?.image });
     setActiveIndex(swiper.activeIndex);
   };
 
@@ -44,9 +46,13 @@ const PhotoModal: FC = () => {
     setZoomValue(+value);
   };
 
+  const close = () => {
+    setPhotoModal({ image, isOpen: false });
+  };
+
   return (
     <div
-      onClick={() => setPhotoModal({ image, isOpen: false })}
+      onClick={close}
       className={clsx(
         "fixed top-0 bottom-0 left-0 right-0 bg-[rgba(0,0,0,0.50)] flex justify-center items-center z-[100] opacity-0 pointer-events-none animate-def",
         { "opacity-100 pointer-events-auto": isOpen }
@@ -70,12 +76,15 @@ const PhotoModal: FC = () => {
             modules={[Navigation, Pagination]}
             navigation={{
               prevEl: ".gallery-swiper-prev",
-              nextEl: ".gallery-swiper-next button",
+              nextEl: ".gallery-swiper-next .next",
             }}
             onSlideChange={handleSlideChange}
             // @ts-ignore
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            pagination={{ el: ".gallery-swiper-pagination", clickable: true }}
+            pagination={{
+              el: ".gallery-swiper-pagination",
+              clickable: true,
+            }}
           >
             {images.map((img, key) => (
               <SwiperSlide key={key}>
@@ -93,7 +102,12 @@ const PhotoModal: FC = () => {
             ))}
           </Swiper>
           <div className="flex flex-col justify-between gap-[16px] h-full self-stretch flex-[0_0_64px] max-w-[64px] gallery-swiper-next">
-            <div className="btn-outline border-button-secondary-darkmode rounded-lvl-1000 w-[64px] h-[64px]"></div>
+            <button
+              onClick={close}
+              className="btn-outline border-button-secondary-darkmode rounded-lvl-1000 flex justify-center items-center w-[64px] h-[64px]"
+            >
+              <img src={crossIcon} alt="cross" />
+            </button>
             <div className="rounded-[49px] py-[23px] px-20 flex-[0_0_353px] flex flex-col justify-between gap-[12px] items-center bg-secondary-background">
               <button>
                 <img src={maginfierPlusIcon} alt="magnifier-plus" />
@@ -101,7 +115,9 @@ const PhotoModal: FC = () => {
               <div className="rounded-[23px] relative bg-icon-neutral w-[24px] flex-auto overflow-hidden">
                 <div className="absolute top-[24px] bottom-0 left-0 right-0">
                   <div
-                    style={{ height: `calc(${zoomValue}% + 24px)` }}
+                    style={{
+                      height: `calc(${zoomValue}% + 24px)`,
+                    }}
                     className="rounded-lvl-16 absolute left-0 right-0 bottom-0 bg-button-secondary-darkmode"
                   ></div>
                   <div
@@ -121,7 +137,7 @@ const PhotoModal: FC = () => {
                 <img src={maginfierMinusIcon} alt="magnifier-minus" />
               </button>
             </div>
-            <button className="btn rounded-lvl-1000 flex-[0_0_64px] h-[64px] flex justify-center items-center">
+            <button className="btn next rounded-lvl-1000 flex-[0_0_64px] h-[64px] flex justify-center items-center">
               <img src={arrowIcon} alt="arrow" className="rotate-180" />
             </button>
           </div>

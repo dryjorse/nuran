@@ -1,20 +1,14 @@
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import ReactPlayer from "react-player";
 import { aboutData } from "../../../constants/data";
 import Photo from "../../photo/Photo";
-import { useInView } from "react-intersection-observer";
 import { useTranslation } from "react-i18next";
 
 const About: FC = () => {
   const { t } = useTranslation();
-  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
-
-  useEffect(() => {
-    console.log("eded");
-  }, [inView]);
 
   return (
-    <section id="about" ref={ref} className="container pt-80 pb-[57px]">
+    <section id="about" className="container pt-80 pb-[57px]">
       <div className="flex justify-between gap-[24px] items-start">
         <div className="flex-[0_1_558px]">
           <h2>{t("about.title")}</h2>
