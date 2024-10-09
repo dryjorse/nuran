@@ -32,10 +32,10 @@
     @apply text-16 bg-[#F5F5F5];
   }
   h2 {
-    @apply text-[28px] leading-[28px] font-bold text-text-primary-lightmode;
+    @apply text-[28px] leading-[28px] font-bold text-text-primary-lightmode btb:text-[20px] btb:leading-[24px];
   }
   h3 {
-    @apply text-text-secondary-neutral leading-[20px] font-normal;
+    @apply text-text-secondary-neutral leading-[20px] font-normal btb:text-[14px] btb:leading-[18px];
   }
   p {
     @apply text-[13px] leading-[17px];
@@ -59,7 +59,7 @@
 
 @layer components {
   .container {
-    @apply max-w-[1140px] mx-auto;
+    @apply px-[16px] max-w-[1172px] mx-auto;
   }
   .btn {
     @apply rounded-lvl-4 py-[4px] px-[16px] text-[13px] text-text-primary-darkmode font-bold leading-[17px] bg-button-secondary-darkmode animate-def hover:bg-button-secondary-neutral active:bg-button-secondary-lightmode disabled:bg-icon-neutral disabled:pointer-events-none;

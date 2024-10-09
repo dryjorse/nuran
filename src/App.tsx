@@ -5,7 +5,7 @@ import "./i18n";
 
 function App() {
   return (
-    <div className="App">
+    <div className="overflow-hidden">
       <Header />
       <Routes>
         {routes.map((route) => (

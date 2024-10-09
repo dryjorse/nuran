@@ -46,14 +46,14 @@ const Header: FC = () => {
   };
 
   return (
-    <header className=" fixed top-0 left-0 right-0 py-[15px] bg-white text-center z-50">
+    <header className="fixed top-0 left-0 right-0 py-[15px] bg-white text-center z-50">
       <div className="container flex justify-between items-center">
         <Link to="/">
           <img src={logoIcon} alt="logo" className="max-w-[71px]" />
         </Link>
-        <div className="mx-20 rounded-[1px] w-[16px] h-[1px] bg-divider-neutral"></div>
-        <nav className="flex gap-[20px] items-center">
-          <ul className="flex gap-[32px] items-center">
+        <div className="mx-20 rounded-[1px] w-[16px] h-[1px] bg-divider-neutral blt:hidden"></div>
+        <nav className="flex gap-[20px] items-center blt:ml-auto blt:mr-20">
+          <ul className="flex gap-[32px] items-center blt:hidden">
             {navList.map(({ title }) => (
               <li key={title}>
                 <ScrollLink
@@ -80,7 +80,7 @@ const Header: FC = () => {
             360°
           </Link>
         </nav>
-        <div className="mx-20 rounded-[1px] w-[16px] h-[1px] bg-divider-neutral"></div>
+        <div className="mx-20 rounded-[1px] w-[16px] h-[1px] bg-divider-neutral blt:hidden"></div>
         <Dropdown
           buttonElem={
             <div className="flex gap-[8px] items-center">
