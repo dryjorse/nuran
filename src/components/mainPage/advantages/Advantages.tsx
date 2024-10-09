@@ -20,11 +20,15 @@ const Advantages: FC = () => {
   return (
     <section id="advantages" className="container pt-[57px] pb-[48px]">
       <h2>{t("advantages.title")}</h2>
-      <div className="mt-[16px] flex justify-between items-center">
+      <div className="mt-[16px] grid grid-cols-[repeat(5,minmax(0,180px))] gap-x-[16px] gap-y-[39px] justify-between items-center lt:grid-cols-3 stb:grid-cols-2">
         {advantages.map(({ icon, title }, key) => (
-          <div key={key} className="flex-[0_1_180px] text-center">
-            <div className="h-[132px] flex justify-center items-center">
-              <img src={icon} alt={`advantage-${title}`} className="mx-auto" />
+          <div key={key} className="flex-[0_1_180px] text-center lt:flex-auto">
+            <div className="h-[100px] flex justify-center items-center stb:h-[80px]">
+              <img
+                src={icon}
+                alt={`advantage-${title}`}
+                className="mx-auto w-full h-full object-contain"
+              />
             </div>
             <span className="mt-[24px] block text-[14px] leading-[18px] font-medium">
               {t(`advantages.${title}`)}
