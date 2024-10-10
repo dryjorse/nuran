@@ -30,7 +30,7 @@ const About: FC = () => {
               key={key}
               image={image}
               description="eded"
-              className="lt:w-full tb:h-[237px]"
+              className="lt:max-w-full lt:w-full tb:h-[237px]"
             />
           ))}
         </div>

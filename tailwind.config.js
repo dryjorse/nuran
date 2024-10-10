@@ -76,6 +76,7 @@ export default {
         ublt: { max: "1440px" },
         blt: { max: "1200px" },
         lt: { max: "1024px" },
+        slt: { max: "900px" },
         btb: { max: "834px" },
         tb: { max: "768px" },
         stb: { max: "540px" },

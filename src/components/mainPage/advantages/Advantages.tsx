@@ -18,7 +18,7 @@ const Advantages: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section id="advantages" className="container pt-[57px] pb-[48px]">
+    <section id="advantages" className="container pt-[57px] pb-[48px] bmb:py-[28px]">
       <h2>{t("advantages.title")}</h2>
       <div className="mt-[16px] grid grid-cols-[repeat(5,minmax(0,180px))] gap-x-[16px] gap-y-[39px] justify-between items-center lt:grid-cols-3 stb:grid-cols-2">
         {advantages.map(({ icon, title }, key) => (

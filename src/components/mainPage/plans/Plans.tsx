@@ -18,7 +18,7 @@ const Plans: FC = () => {
   const currentBlock = blocks.find((currBlock) => currBlock.block === block);
 
   return (
-    <section id="plans" className="container py-[48px]">
+    <section id="plans" className="container py-[48px] bmb:py-[28px]">
       <h2>{t("plans.title")}</h2>
       <h3 className="mt-[8px] mb-[16px]">{t("plans.subtitle")}</h3>
       <div className="my-[12px] flex justify-between gap-[12px]">
@@ -35,7 +35,7 @@ const Plans: FC = () => {
           </button>
         ))}
       </div>
-      <div className="border border-[#D2D2D2] rounded-lvl-12 h-[465px]">
+      <div className="border border-[#D2D2D2] rounded-lvl-12 h-[465px] bg-white tb:h-[370px] stb:h-[200px]">
         <img
           src={currentBlock?.image}
           alt="block-plan"
