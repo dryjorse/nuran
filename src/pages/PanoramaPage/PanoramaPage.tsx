@@ -2,7 +2,6 @@ import { FC } from "react";
 import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
 import panoramaImage from "../../assets/images/360.jpg";
 import { MarkersPlugin } from "@photo-sphere-viewer/markers-plugin";
-import markerImage from "../../assets/images/marker.png";
 import "@photo-sphere-viewer/markers-plugin/index.css";
 
 const PanoramaPage: FC = () => {

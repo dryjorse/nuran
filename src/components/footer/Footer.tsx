@@ -12,29 +12,6 @@ import { queryKeys } from "../../constants/api";
 import linksService from "../../services/linksService";
 import Skeleton from "../ui/skeleton/Skeleton";
 
-const contacts = [
-  {
-    icon: <InstagramIcon />,
-    title: "nuran_building",
-    link: "https://www.instagram.com/nuran_building/",
-  },
-  {
-    icon: <WhatsappIcon />,
-    title: "+996 555 500 900",
-    link: "https://api.whatsapp.com/send?phone=996555500900",
-  },
-  {
-    icon: <YoutubeIcon />,
-    title: "Nuran Building",
-    link: "https://www.youtube.com/",
-  },
-  {
-    icon: <EmailIcon />,
-    title: "nuranstroy@mail.ru",
-    link: "mailto:nuranstroy@mail.ru",
-  },
-];
-
 const Footer: FC = () => {
   const { t } = useTranslation();
 
