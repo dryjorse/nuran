@@ -16,9 +16,9 @@ const MapComp: FC = () => {
         <Map
           width="100%"
           height={isMobile ? 214 : isTablet ? 360 : 500}
-          defaultState={{ center: [42.824903, 74.583004], zoom: 17 }}
+          defaultState={{ center: [42.823435, 74.593002], zoom: 17 }}
         >
-          <Placemark geometry={[42.824903, 74.583004]} />
+          <Placemark geometry={[42.823435, 74.593002]} />
         </Map>
       </YMaps>
     </section>

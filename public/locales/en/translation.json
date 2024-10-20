@@ -53,7 +53,8 @@
     "placeholderPhone": "Enter your phone number",
     "submit": "Submit request",
     "whatsapp": "Go to WhatsApp",
-    "contactWhen": "Call center staff will contact you as soon as they are available."
+    "contactWhen": "Call center staff will contact you as soon as they are available.",
+    "success": "Order sent successfully!"
   },
   "stages": {
     "title": "Construction stages",
@@ -61,7 +62,9 @@
     "report": "Construction report"
   },
   "footer": {
-    "schedule": "Opening hours 9:00 - 18:00",
+    "schedule": "Opening hours 9:00 - 19:00",
     "address": "Maldybaeva 265 address"
-  }
+  },
+  "loading": "Loading...",
+  "error": "Something went wrong..."
 }

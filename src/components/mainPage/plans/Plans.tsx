@@ -1,10 +1,11 @@
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import blockAImage from "../../../assets/images/block-a.png";
-import blockBImage from "../../../assets/images/block-b.png";
+import blockAImage from "../../../assets/images/block-a.jpg";
+import blockBImage from "../../../assets/images/block-b.jpg";
 import clsx from "clsx";
 import "swiper/css";
 import "swiper/css/pagination";
+import Photo from "../../photo/Photo";
 
 const blocks: { block: "A" | "B"; image: string }[] = [
   { block: "A", image: blockAImage },
@@ -36,10 +37,11 @@ const Plans: FC = () => {
         ))}
       </div>
       <div className="border border-[#D2D2D2] rounded-lvl-12 h-[465px] bg-white tb:h-[370px] stb:h-[200px]">
-        <img
-          src={currentBlock?.image}
+        <Photo
           alt="block-plan"
-          className="mx-auto h-full"
+          isShadow={false}
+          image={currentBlock!.image}
+          className="mx-auto h-full max-w-[774px]"
         />
       </div>
     </section>

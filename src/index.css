@@ -77,4 +77,7 @@
   .stages-swiper-pagination .swiper-pagination-bullet-active {
     @apply rounded-lvl-8 bg-button-secondary-darkmode w-[32px];
   }
+  .panorama-marker {
+    @apply relative border-2 border-primary-background rounded-[12px] py-[5px] px-10 bg-button-secondary-darkmode flex justify-center items-end text-white before:absolute before:bottom-[-24px] before:mx-auto before:border-[12px] before:border-transparent before:border-t-button-secondary-darkmode;
+  }
 }

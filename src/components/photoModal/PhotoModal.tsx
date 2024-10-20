@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
 import { photoModalAtom } from "../../store/store";
-import { aboutData, galleryData } from "../../constants/data";
+import { aboutData, plansImagesData } from "../../constants/data";
 import clsx from "clsx";
 import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -12,8 +12,7 @@ import crossIcon from "../../assets/images/icons/cross.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 import useMatchMedia from "../../hooks/useMatchMedia";
-
-const images = [...aboutData.map((image) => ({ image })), ...galleryData];
+import { useGallery } from "../../hooks/queries/useGallery";
 
 const PhotoModal: FC = () => {
   const [{ image, isOpen }, setPhotoModal] = useAtom(photoModalAtom);
@@ -21,6 +20,13 @@ const PhotoModal: FC = () => {
   const [activeIndex, setActiveIndex] = useState(1);
   const [zoomValue, setZoomValue] = useState(0);
   const isSmallLaptop = useMatchMedia(900);
+
+  const { data } = useGallery();
+
+  const images = [
+    ...[...aboutData, ...plansImagesData].map((image) => ({ image })),
+    ...(data || []),
+  ];
 
   useEffect(() => {
     if (isOpen) {
@@ -99,7 +105,7 @@ const PhotoModal: FC = () => {
                 <img
                   alt="gallery"
                   src={img.image}
-                  className="rounded-lvl-12 w-full h-[513px] object-cover object-center bg-no-repeat slt:h-[408px] tb:h-[320px] stb:h-[240px] mb:h-[168px]"
+                  className="rounded-lvl-12 w-fit mx-auto h-[513px] object-contain object-center bg-no-repeat slt:h-[408px] tb:h-[320px] stb:h-[240px] mb:h-[168px]"
                   style={{
                     scale: `${
                       (activeIndex === key ? (zoomValue * 400) / 100 : 0) + 100

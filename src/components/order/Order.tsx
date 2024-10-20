@@ -1,16 +1,48 @@
 import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { FC } from "react";
 import Input from "../ui/input/Input";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { IOrderForm } from "../../types/client.types";
 import { useTranslation } from "react-i18next";
+import { useMutation } from "@tanstack/react-query";
+import orderService from "../../services/orderService";
+import { useAtom } from "jotai";
+import { notificationAtom } from "../../store/store";
 
 const Order: FC = () => {
   const {
+    reset,
     register,
-    formState: { errors },
-  } = useForm<IOrderForm>({ mode: "onBlur" });
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm<IOrderForm>({ mode: "onTouched" });
   const { t } = useTranslation();
+  const [_, setNotification] = useAtom(notificationAtom);
+
+  const { mutate: sendOrder, isPending } = useMutation({
+    mutationFn: orderService.sendOrder,
+    onMutate: () => {
+      setNotification({
+        message: t("loading"),
+        isOpen: true,
+        isAutoClose: false,
+        type: "loading",
+      });
+    },
+    onSuccess: () => {
+      setNotification({
+        message: t("order.success"),
+        isOpen: true,
+        isAutoClose: true,
+        type: "success",
+      });
+      reset();
+    },
+  });
+
+  const sendOrderFunc: SubmitHandler<IOrderForm> = (data) => {
+    sendOrder(data);
+  };
 
   return (
     <section
@@ -36,9 +68,9 @@ const Order: FC = () => {
         <Input
           title={t("order.name")}
           placeholder={t("order.placeholderName")}
-          error={errors.fullname}
+          error={errors.name}
           wrapperClassName="mb-20 tb:mb-[12px]"
-          {...register("fullname", {
+          {...register("name", {
             required: "Поле не может быть пустым!",
             minLength: {
               value: 2,
@@ -48,10 +80,10 @@ const Order: FC = () => {
         />
         <Input
           type="phone"
-          error={errors.phone}
+          error={errors.number}
           title={t("order.phone")}
           placeholder={t("order.placeholderPhone")}
-          {...register("phone", {
+          {...register("number", {
             required: "Поле не может быть пустым",
             validate: {
               "Некорректный формат номера телефона": (value) =>
@@ -60,7 +92,11 @@ const Order: FC = () => {
           })}
         />
         <div className="mt-20 mb-[8px] flex justify-between gap-[16px] whitespace-nowrap tb:flex-col tb:gap-[8px]">
-          <button className="btn py-[13px] px-70 text-14 font-medium blt:flex-auto">
+          <button
+            disabled={!isValid || isPending}
+            onClick={handleSubmit(sendOrderFunc)}
+            className="btn py-[13px] px-70 text-14 font-medium blt:flex-auto"
+          >
             {t("order.submit")}
           </button>
           <a

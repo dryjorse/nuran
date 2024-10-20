@@ -5,6 +5,7 @@ const colors = {
   white: twColors.white,
   transparent: twColors.transparent,
   red: "rgb(255,40,40)",
+  green: "#49CC90",
   "text-primary-lightmode": "rgba(20, 20, 20, 1)",
   "text-primary-darkmode": "rgba(255, 255, 255, 1)",
   "text-neutral": "rgba(210, 210, 210, 1)",
