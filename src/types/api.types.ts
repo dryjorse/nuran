@@ -12,13 +12,21 @@ export interface ISimpleData {
   id: number;
   image: string;
 }
+export interface IGallery extends ISimpleData {
+  desription_ru: string;
+  desription_en: string;
+  desription_ky: string;
+}
 export interface IOrderBody {
   name: string;
   number: number;
 }
 export interface ILinks {
   yt_link: string;
+  yt_title: string;
   ig_link: string;
+  ig_title: string;
   wt_link: string;
+  wt_title: string;
   email_link: string;
 }

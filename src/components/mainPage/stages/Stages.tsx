@@ -102,6 +102,7 @@ const Stages: FC = () => {
             <div className="flex justify-center w-fit !gap-[8px] *:!block">
               {[...new Array(7)].map((_, key) => (
                 <Skeleton
+                  key={key}
                   height={8}
                   className={clsx("w-[8px] rounded-lvl-12", {
                     "!w-[32px]": key === 0,

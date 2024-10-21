@@ -7,15 +7,19 @@ import { useTranslation } from "react-i18next";
 import useMatchMedia from "../../../hooks/useMatchMedia";
 import { useGallery } from "../../../hooks/queries/useGallery";
 import Skeleton from "../../ui/skeleton/Skeleton";
+import { langs } from "../../../constants/helpers";
+import { LanguageType } from "../../../types/client.types";
+import { LanguagesType } from "../../../types/api.types";
 
 const Gallery: FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const isLaptop = useMatchMedia(1200);
   const isSmallLaptop = useMatchMedia(900);
   const isSmallTablet = useMatchMedia(540);
 
   const { data } = useGallery();
+
 
   return (
     <section id="gallery" className="container py-[48px] bmb:py-[28px]">
@@ -28,10 +32,20 @@ const Gallery: FC = () => {
             isOpen={isGalleryOpen}
             className="grid grid-cols-[repeat(4,minmax(0,267px))] gap-[24px] justify-between blt:grid-cols-[repeat(3,minmax(0,267px))] blt:justify-center blt:gap-[16px] slt:grid-cols-[repeat(2,minmax(0,393px))] stb:grid-cols-[repeat(1,minmax(0,100%))]"
           >
-            {data.map(({ id, image }) => (
+            {data.map((photo) => (
               <Photo
-                key={id}
-                image={image}
+                key={photo.id}
+                image={photo.image}
+                description={
+                  photo[
+                    // @ts-ignore
+                    `description_${
+                      langs[
+                        i18n.resolvedLanguage as LanguageType
+                      ] as LanguagesType
+                    }`
+                  ]
+                }
                 className="mx-auto stb:w-full btb:max-w-none"
               />
             ))}
