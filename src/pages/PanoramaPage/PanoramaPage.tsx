@@ -13,7 +13,7 @@ const PanoramaPage: FC = () => {
           {
             id: "marker-1",
             html: '<strong class="panorama-marker">ЖК Nuran Park</strong>',
-            position: { yaw: "0deg", pitch: "-4deg" },
+            position: { yaw: "-6deg", pitch: "-5deg" },
             zIndex: 10,
           },
           {

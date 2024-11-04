@@ -41,7 +41,7 @@ const Input = forwardRef<HTMLInputElement, Props>(
               }
             )}
           >
-            <strong className="text-[16px]">+966</strong>
+            <strong className="text-[16px]">+996</strong>
             <input
               // @ts-ignore
               ref={ref}

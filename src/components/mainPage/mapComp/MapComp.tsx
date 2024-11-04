@@ -1,26 +1,37 @@
-import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import useMatchMedia from "../../../hooks/useMatchMedia";
+import { MapContainer } from "react-leaflet/MapContainer";
+import { Marker, Popup, TileLayer } from "react-leaflet";
+import markerIcon from "../../../assets/images/icons/map-mark.svg";
+import { Icon } from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 const MapComp: FC = () => {
   const { t } = useTranslation();
   const isTablet = useMatchMedia(768);
   const isMobile = useMatchMedia(375);
 
+  const customIcon = new Icon({
+    iconUrl: markerIcon,
+    iconSize: [38, 38],
+  });
+
   return (
     <section className="container py-[48px] bmb:py-[28px]">
       <h2>{t("geolocation.title")}</h2>
-      <h3 className="mt-[8px] mb-[16px]">{t("geolocation.subtitle")}</h3>
-      <YMaps>
-        <Map
-          width="100%"
-          height={isMobile ? 214 : isTablet ? 360 : 500}
-          defaultState={{ center: [42.823435, 74.593002], zoom: 17 }}
-        >
-          <Placemark geometry={[42.823435, 74.593002]} />
-        </Map>
-      </YMaps>
+      <MapContainer
+        center={[42.823435, 74.593002]}
+        zoom={17}
+        scrollWheelZoom={false}
+        className="w-full h-[500px] tb:h-[360px] mb:h-[214px] z-[1]"
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker icon={customIcon} position={[42.823435, 74.593002]}></Marker>
+      </MapContainer>
     </section>
   );
 };

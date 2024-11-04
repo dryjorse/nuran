@@ -5,7 +5,7 @@
     "plans": "Typical floor plans",
     "gallery": "Gallery",
     "order": "Request",
-    "stages": "Stages of work",
+    "stages": "Stages of construction",
     "contacts": "Contacts"
   },
   "banner": {
@@ -54,7 +54,12 @@
     "submit": "Submit request",
     "whatsapp": "Go to WhatsApp",
     "contactWhen": "Call center staff will contact you as soon as they are available.",
-    "success": "Order sent successfully!"
+    "success": "Order sent successfully!",
+    "errors": {
+      "empty": "The field cannot be empty!",
+      "min": "The value must be at least two letters long",
+      "phone": "Incorrect phone number format"
+    }
   },
   "stages": {
     "title": "Construction stages",
@@ -63,7 +68,7 @@
   },
   "footer": {
     "schedule": "Opening hours 9:00 - 19:00",
-    "address": "Maldybaeva 265 address"
+    "address": "Ch. Aitmatov 299/3"
   },
   "loading": "Loading...",
   "error": "Something went wrong..."

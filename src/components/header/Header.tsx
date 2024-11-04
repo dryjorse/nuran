@@ -14,7 +14,6 @@ const navList = [
   { title: "header.advantages" },
   { title: "header.plans" },
   { title: "header.gallery" },
-  { title: "header.order" },
   { title: "header.stages" },
   { title: "header.contacts" },
 ];

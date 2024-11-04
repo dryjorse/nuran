@@ -1,4 +1,3 @@
-import { Map, Placemark, YMaps } from "@pbe/react-yandex-maps";
 import { FC } from "react";
 import Input from "../ui/input/Input";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -8,6 +7,9 @@ import { useMutation } from "@tanstack/react-query";
 import orderService from "../../services/orderService";
 import { useAtom } from "jotai";
 import { notificationAtom } from "../../store/store";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { Icon } from "leaflet";
+import markerIcon from "../../assets/images/icons/map-mark.svg";
 
 const Order: FC = () => {
   const {
@@ -44,21 +46,29 @@ const Order: FC = () => {
     sendOrder(data);
   };
 
+  const customIcon = new Icon({
+    iconUrl: markerIcon,
+    iconSize: [38, 38],
+  });
+
   return (
     <section
       id="order"
       className="container py-[48px] flex justify-between gap-[24px] blt:flex-col bmb:py-[28px]"
     >
       <div className="flex-[0_1_558px] blt:order-2 blt:flex-[0_1_477px] tb:flex-[0_1_300px] mb:flex-[0_1_204px]">
-        <YMaps>
-          <Map
-            width="100%"
-            height="100%"
-            defaultState={{ center: [42.824903, 74.583004], zoom: 17 }}
-          >
-            <Placemark geometry={[42.824903, 74.583004]} />
-          </Map>
-        </YMaps>
+        <MapContainer
+          center={[42.825041, 74.583494]}
+          zoom={17}
+          scrollWheelZoom={false}
+          className="w-full h-full z-[1]"
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker icon={customIcon} position={[42.825041, 74.583494]}></Marker>
+        </MapContainer>
       </div>
       <form onSubmit={(e) => e.preventDefault()} className="order-1">
         <h2>{t("order.title")}</h2>
@@ -71,10 +81,10 @@ const Order: FC = () => {
           error={errors.name}
           wrapperClassName="mb-20 tb:mb-[12px]"
           {...register("name", {
-            required: "Поле не может быть пустым!",
+            required: t("order.errors.empty"),
             minLength: {
               value: 2,
-              message: "Значение должно состоять из не менее двух букв",
+              message: t("order.errors.min"),
             },
           })}
         />
@@ -84,7 +94,7 @@ const Order: FC = () => {
           title={t("order.phone")}
           placeholder={t("order.placeholderPhone")}
           {...register("number", {
-            required: "Поле не может быть пустым",
+            required: t("order.errors.empty"),
             validate: {
               "Некорректный формат номера телефона": (value) =>
                 (value + "").length === 9,
