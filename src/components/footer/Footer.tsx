@@ -45,7 +45,7 @@ const Footer: FC = () => {
                 </div>
                 <div className="my-[8px] h-[1px] bg-divider-secondary-darkmode btb:max-w-[116px] btb:mx-auto"></div>
                 <span className="leading-[20px] underline text-text-primary-darkmode animate-def duration-200 group-hover:text-text-primary-lightmode whitespace-nowrap">
-                  nuran_building
+                  {data?.ig_title}
                 </span>
               </a>
               <a
@@ -58,7 +58,7 @@ const Footer: FC = () => {
                 </div>
                 <div className="my-[8px] h-[1px] bg-divider-secondary-darkmode btb:max-w-[116px] btb:mx-auto"></div>
                 <span className="leading-[20px] underline text-text-primary-darkmode animate-def duration-200 group-hover:text-text-primary-lightmode whitespace-nowrap">
-                  +996 555 500 900
+                  {data?.wt_title}
                 </span>
               </a>
               <a
@@ -71,7 +71,7 @@ const Footer: FC = () => {
                 </div>
                 <div className="my-[8px] h-[1px] bg-divider-secondary-darkmode btb:max-w-[116px] btb:mx-auto"></div>
                 <span className="leading-[20px] underline text-text-primary-darkmode animate-def duration-200 group-hover:text-text-primary-lightmode whitespace-nowrap">
-                  Nuran Building
+                  {data?.yt_title}
                 </span>
               </a>
               <a
@@ -84,7 +84,7 @@ const Footer: FC = () => {
                 </div>
                 <div className="my-[8px] h-[1px] bg-divider-secondary-darkmode btb:max-w-[116px] btb:mx-auto"></div>
                 <span className="leading-[20px] underline text-text-primary-darkmode animate-def duration-200 group-hover:text-text-primary-lightmode whitespace-nowrap">
-                  nuranstroy@mail.ru
+                  {data?.email_link}
                 </span>
               </a>
             </>
