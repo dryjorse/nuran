@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
-import useMatchMedia from "../../../hooks/useMatchMedia";
 import { MapContainer } from "react-leaflet/MapContainer";
 import { Marker, TileLayer } from "react-leaflet";
 import markerIcon from "../../../assets/images/icons/map-mark.svg";
