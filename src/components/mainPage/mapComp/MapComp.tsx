@@ -2,15 +2,13 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 import useMatchMedia from "../../../hooks/useMatchMedia";
 import { MapContainer } from "react-leaflet/MapContainer";
-import { Marker, Popup, TileLayer } from "react-leaflet";
+import { Marker, TileLayer } from "react-leaflet";
 import markerIcon from "../../../assets/images/icons/map-mark.svg";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 const MapComp: FC = () => {
   const { t } = useTranslation();
-  const isTablet = useMatchMedia(768);
-  const isMobile = useMatchMedia(375);
 
   const customIcon = new Icon({
     iconUrl: markerIcon,
