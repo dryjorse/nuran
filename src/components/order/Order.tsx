@@ -52,22 +52,24 @@ const Order: FC = () => {
   });
 
   return (
-    <script data-b24-form="inline/1/aftkc1" data-skip-moving="true">
-      {
-        (function (_, d, u) {
-          var s = d.createElement("script");
-          s.async = true;
-          s.src = u + "?" + ((Date.now() / 180000) | 0);
-          var h = d.getElementsByTagName("script")[0];
-          //@ts-ignore
-          h.parentNode.insertBefore(s, h);
-        })(
-          window,
-          document,
-          "https://cdn-ru.bitrix24.kz/b31856562/crm/form/loader_1.js"
-        ) as unknown as ""
-      }
-    </script>
+    <section id="order">
+      <script data-b24-form="inline/1/aftkc1" data-skip-moving="true">
+        {
+          (function (_, d, u) {
+            var s = d.createElement("script");
+            s.async = true;
+            s.src = u + "?" + ((Date.now() / 180000) | 0);
+            var h = d.getElementsByTagName("script")[0];
+            //@ts-ignore
+            h.parentNode.insertBefore(s, h);
+          })(
+            window,
+            document,
+            "https://cdn-ru.bitrix24.kz/b31856562/crm/form/loader_1.js"
+          ) as unknown as ""
+        }
+      </script>
+    </section>
   );
 
   return (
