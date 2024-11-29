@@ -1,30 +1,36 @@
 import { useAtom } from "jotai";
-import { ChangeEvent, FC, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { photoModalAtom } from "../../store/store";
-import { aboutData, plansImagesData } from "../../constants/data";
+import {
+  aboutData,
+  planAImagesData,
+  planBImagesData,
+} from "../../constants/data";
 import clsx from "clsx";
 import { Swiper, SwiperClass, SwiperRef, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import arrowIcon from "../../assets/images/icons/arrow-slider.svg";
-import maginfierPlusIcon from "../../assets/images/icons/magnifier-plus.svg";
-import maginfierMinusIcon from "../../assets/images/icons/magnifier-minus.svg";
+// import maginfierPlusIcon from "../../assets/images/icons/magnifier-plus.svg";
+// import maginfierMinusIcon from "../../assets/images/icons/magnifier-minus.svg";
 import crossIcon from "../../assets/images/icons/cross.svg";
-import "swiper/css";
-import "swiper/css/pagination";
 import useMatchMedia from "../../hooks/useMatchMedia";
 import { useGallery } from "../../hooks/queries/useGallery";
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const PhotoModal: FC = () => {
   const [{ image, isOpen }, setPhotoModal] = useAtom(photoModalAtom);
   const swiperRef = useRef<SwiperRef>(null);
   const [activeIndex, setActiveIndex] = useState(1);
-  const [zoomValue, setZoomValue] = useState(0);
   const isSmallLaptop = useMatchMedia(900);
 
   const { data } = useGallery();
 
   const images = [
-    ...[...aboutData, ...plansImagesData].map((image) => ({ image })),
+    ...[...aboutData, ...planAImagesData, ...planBImagesData].map((image) => ({
+      image,
+    })),
     ...(data || []),
   ];
 
@@ -43,15 +49,15 @@ const PhotoModal: FC = () => {
     swiperRef.current?.slideTo?.(imageId);
   }, [image]);
 
+  // const onChangeZoom = ({
+  //   target: { value },
+  // }: ChangeEvent<HTMLInputElement>) => {
+  //   const newScale = value / 100; // Перевод процентов в дробный масштаб
+  // };
+
   const handleSlideChange = (swiper: SwiperClass) => {
     setPhotoModal({ isOpen, image: images[swiper.activeIndex]?.image });
     setActiveIndex(swiper.activeIndex);
-  };
-
-  const onChangeZoom = ({
-    target: { value },
-  }: ChangeEvent<HTMLInputElement>) => {
-    setZoomValue(+value);
   };
 
   const close = () => {
@@ -102,16 +108,27 @@ const PhotoModal: FC = () => {
           >
             {images.map((img, key) => (
               <SwiperSlide key={key}>
-                <img
-                  alt="gallery"
-                  src={img.image}
-                  className="rounded-lvl-12 w-fit mx-auto h-[513px] object-contain object-center bg-no-repeat slt:h-[408px] tb:h-[320px] stb:h-[240px] mb:h-[168px]"
-                  style={{
-                    scale: `${
-                      (activeIndex === key ? (zoomValue * 400) / 100 : 0) + 100
-                    }%`,
-                  }}
-                />
+                <TransformWrapper
+                  wheel={{ step: 50 }}
+                  initialScale={1}
+                  minScale={1}
+                  maxScale={5}
+                  doubleClick={{ step: 1.2, disabled: false, mode: "zoomIn" }}
+                >
+                  <TransformComponent wrapperClass="!mx-auto">
+                    <img
+                      alt="gallery"
+                      src={img.image}
+                      className="rounded-lvl-12 w-fit mx-auto h-[513px] object-contain object-center bg-no-repeat slt:h-[408px] tb:h-[320px] stb:h-[240px] mb:h-[168px]"
+                      // style={{
+                      //   scale: `${
+                      //     (activeIndex === key ? (zoomValue * 400) / 100 : 0) +
+                      //     100
+                      //   }%`,
+                      // }}
+                    />
+                  </TransformComponent>
+                </TransformWrapper>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -122,7 +139,8 @@ const PhotoModal: FC = () => {
             >
               <img src={crossIcon} alt="cross" />
             </button>
-            <div className="rounded-[49px] py-[23px] px-20 flex-[0_0_353px] flex flex-col justify-between gap-[12px] items-center bg-secondary-background">
+            <div className="flex-[0_0_353px]"></div>
+            {/* <div className="rounded-[49px] py-[23px] px-20 flex-[0_0_353px] flex flex-col justify-between gap-[12px] items-center bg-secondary-background">
               <button>
                 <img src={maginfierPlusIcon} alt="magnifier-plus" />
               </button>
@@ -130,18 +148,18 @@ const PhotoModal: FC = () => {
                 <div className="absolute top-[24px] bottom-0 left-0 right-0">
                   <div
                     style={{
-                      height: `calc(${zoomValue}% + 24px)`,
+                      height: `calc(${imageScale}% + 24px)`,
                     }}
                     className="rounded-lvl-16 absolute left-0 right-0 bottom-0 bg-button-secondary-darkmode"
                   ></div>
                   <div
-                    style={{ bottom: `${zoomValue}%` }}
+                    style={{ bottom: `${imageScale}%` }}
                     className="absolute rounded-lvl-1000 border-[5px] border-button-primary-lightmode bg-button-primary-darkmode w-[24px] h-[24px]"
                   ></div>
                 </div>
                 <input
                   type="range"
-                  value={zoomValue}
+                  value={imageScale}
                   onChange={onChangeZoom}
                   aria-orientation="vertical"
                   className="absolute top-0 left-0 [-webkit-appearance:_slider-vertical] h-full w-full cursor-pointer z-20 opacity-0"
@@ -150,7 +168,7 @@ const PhotoModal: FC = () => {
               <button>
                 <img src={maginfierMinusIcon} alt="magnifier-minus" />
               </button>
-            </div>
+            </div> */}
             <button className="btn next rounded-lvl-1000 flex-[0_0_64px] h-[64px] flex justify-center items-center gallery-swiper-next slt:hidden">
               <img src={arrowIcon} alt="arrow" className="rotate-180" />
             </button>

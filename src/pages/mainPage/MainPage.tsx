@@ -9,6 +9,7 @@ import PhotoModal from "../../components/photoModal/PhotoModal";
 import Order from "../../components/order/Order";
 import Stages from "../../components/mainPage/stages/Stages";
 import Footer from "../../components/footer/Footer";
+import Trigger from "../../components/trigger/Trigger";
 
 const MainPage: FC = () => {
   return (
@@ -23,6 +24,7 @@ const MainPage: FC = () => {
       <Order />
       <Stages />
       <Footer />
+      <Trigger />
     </>
   );
 };

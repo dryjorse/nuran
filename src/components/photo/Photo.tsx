@@ -8,6 +8,7 @@ interface Props {
   image: string;
   description?: string;
   className?: string;
+  imgClassName?: string;
   isShadow?: boolean;
   alt?: string;
 }
@@ -16,6 +17,7 @@ const Photo: FC<Props> = ({
   image,
   description,
   className = "",
+  imgClassName = "",
   isShadow = true,
   alt = "gallery",
 }) => {
@@ -34,6 +36,7 @@ const Photo: FC<Props> = ({
         alt={alt}
         className={clsx(
           "absolute top-0 bottom-0 left-0 right-0 object-cover animate-def duration-[.250s] z-[5] w-full h-full",
+          imgClassName,
           { "group-hover:blur-sm": isShadow }
         )}
       />

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.b24-form {
+  padding: 0 20px;
+}
+
 @layer base {
   @font-face {
     font-family: "GothamPro";

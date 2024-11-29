@@ -9,7 +9,7 @@ import { useAtom } from "jotai";
 import { notificationAtom } from "../../store/store";
 import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { Icon } from "leaflet";
-import markerIcon from "../../assets/images/icons/map-mark.svg";
+import markerIcon from "../../assets/images/icons/map-mark-office.svg";
 
 const Order: FC = () => {
   const {
@@ -48,8 +48,27 @@ const Order: FC = () => {
 
   const customIcon = new Icon({
     iconUrl: markerIcon,
-    iconSize: [38, 38],
+    iconSize: [80, 80],
   });
+
+  return (
+    <script data-b24-form="inline/1/aftkc1" data-skip-moving="true">
+      {
+        (function (_, d, u) {
+          var s = d.createElement("script");
+          s.async = true;
+          s.src = u + "?" + ((Date.now() / 180000) | 0);
+          var h = d.getElementsByTagName("script")[0];
+          //@ts-ignore
+          h.parentNode.insertBefore(s, h);
+        })(
+          window,
+          document,
+          "https://cdn-ru.bitrix24.kz/b31856562/crm/form/loader_1.js"
+        ) as unknown as ""
+      }
+    </script>
+  );
 
   return (
     <section
@@ -67,7 +86,7 @@ const Order: FC = () => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker icon={customIcon} position={[42.825041, 74.583494]}></Marker>
+          <Marker icon={customIcon} position={[42.8252, 74.583494]}></Marker>
         </MapContainer>
       </div>
       <form onSubmit={(e) => e.preventDefault()} className="order-1">

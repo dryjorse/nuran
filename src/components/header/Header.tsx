@@ -11,7 +11,6 @@ import clsx from "clsx";
 
 const navList = [
   { title: "header.about" },
-  { title: "header.advantages" },
   { title: "header.plans" },
   { title: "header.gallery" },
   { title: "header.stages" },

@@ -7,19 +7,13 @@ import logoIcon from "../../assets/images/icons/logo.svg";
 import clockIcon from "../../assets/images/icons/clock.svg";
 import geoIcon from "../../assets/images/icons/geo-small.svg";
 import { useTranslation } from "react-i18next";
-import { useQuery } from "@tanstack/react-query";
-import { queryKeys } from "../../constants/api";
-import linksService from "../../services/linksService";
 import Skeleton from "../ui/skeleton/Skeleton";
+import { useContacts } from "../../hooks/queries/useContacts";
 
 const Footer: FC = () => {
   const { t } = useTranslation();
 
-  const { data } = useQuery({
-    queryKey: [queryKeys.Links],
-    queryFn: () => linksService.getAll(),
-    select: ({ data }) => data,
-  });
+  const { data } = useContacts();
 
   return (
     <footer
